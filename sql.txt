@@ -1,0 +1,32 @@
+
+create table student_kinza(
+student_id int primary key ,
+student_name varchar(12),
+student_age int check(student_age>=18),
+----student_age int ,
+student_batch varchar(23),
+student_reamarks text ,
+student_gender varchar(12)
+)
+select * from student_kinza
+
+insert into student_kinza  values (1,'faisal',17,'tts','GOOD','male');
+insert into student_kinza  values (2,'faisal',19,'tts','poor','good');
+insert into student_kinza  values (3,'skkd',18,'tts','GOOD','male');
+insert into student_kinza  values (4,'samad',15,'tts','poor','male');
+insert into student_kinza  values (5,'anus',14,'tts','GOOD','male');
+
+
+/*delete from student_kinza where student_id = 1 */
+
+/*update student_kinza set student_name='samiii lgbt' where student_id = 2 */
+
+--TRUNCATE TABLE student
+
+--drop table student_kinza
+
+
+
+--alter table student_kinza drop column student_batch
+
+
