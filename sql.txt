@@ -29,4 +29,45 @@ insert into student_kinza  values (5,'anus',14,'tts','GOOD','male');
 
 --alter table student_kinza drop column student_batch
 
+Create Database faisal
+USE faisal
+
+use faisal
+create table sec_student 
+(
+student_id int primary key,
+student_name varchar(100),
+student_age int ,
+student_batch varchar(100),
+student_remarks text,
+student_gender varchar(100)
+
+)
+insert  into sec_student values(2, 'Faisal',17,'TTS','Good','Male');
+insert  into sec_student values(3, 'Faisal',20,'TTS','Poor','Male');
+insert  into sec_student values(4, 'Atif',17,'TTS','Good','Male');
+insert  into sec_student values(5, 'Asif',17,'TTS','Good','Male');
+
+select * from sec_student
+
+
+select * from sec_student as T inner join first_student  as S on T.student_id = S.sec_id
+--select * from 
+
+create table first_student 
+(
+sec_id int primary key,
+student_name varchar(100),
+student_age int ,
+student_batch varchar(100),
+student_remarks text,
+student_gender varchar(100),
+Student_id int foreign key references sec_student(student_id),
+)
+insert  into first_student values(2, 'Faisal',17,'TTS','Good','Male',2);
+insert  into first_student values(3, 'Faisal',20,'TTS','Poor','Male',3);
+insert  into first_student values(4, 'Atif',17,'TTS','Good','Male',4);
+insert  into first_student values(5, 'Asif',17,'TTS','Good','Male',5);
+
+select * from first_student
 
