@@ -71,3 +71,97 @@ insert  into first_student values(5, 'Asif',17,'TTS','Good','Male',5);
 
 select * from first_student
 
+use faisal
+create table teacher (
+teacher_id int primary key,
+teacher_name varchar(50),
+teacher_age int,
+teacher_subject varchar(50),
+teacher_gender varchar(10),
+teacher_salery varchar(50)
+)
+--alter table teacher drop column teacher_salery
+--ALTER TABLE teacher
+--ADD  teacher_salery varchar(50);
+
+drop table teacher
+select * from teacher
+
+insert into teacher values (1,'miss kinza',20,'computer science','female',1000)
+insert into teacher values (2,'sir umer',30,' science','male',100)
+insert into teacher values (3,'faiz',10,'computer science','female',10)
+insert into teacher values (4,'miss kunza',40,' science','male',2000)
+
+
+--select * from teacher inner join student on teacher.teacher_id = student.student_id 
+
+--select * from teacher cross join student
+
+SELECT teacher_id, teacher_name
+FROM teacher
+GROUP BY student_id, student_name;
+
+
+create table student 
+(
+student_id int primary key,
+student_name varchar(100),
+student_age int ,
+student_batch varchar(100),
+student_remarks text,
+student_gender varchar(100),
+
+)
+
+insert  into student values(1, 'Faisal',17,'TTS','Good','Male');
+insert  into student  values(2, 'Faisal',20,'TTS','Poor','Male');
+insert  into student  values(3, 'Atif',17,'TTS','Good','Male');
+insert  into student  values(4, 'Asif',17,'TTS','Good','Male');
+
+
+select * from student
+
+
+
+
+
+
+
+
+
+--create table customer(
+--customer_id int primary key,
+--customer_name varchar(50),
+--customer_salary int,
+--)
+select * from customer 
+--drop table customer 
+--insert into customer values (1,'saad',1000000)
+--insert into customer values (2,'umer',30100)
+--insert into customer values (3,'faiz',122220)
+--insert into customer values (4,'sami',20020)
+
+--select customer_id, sum(customer_salary) as total
+--from customer
+--group by customer_id
+--order by total asc
+
+UPDATE customer
+SET customer_salary = 'faisal'
+WHERE customer_id = 1;
+
+
+
+
+
+
+
+
+UPDATE teacher
+SET teacher_name = 'faisal'
+WHERE teacher_id = 1;
+
+select * 
+from teacher as t
+full outer join student as s 
+on t.teacher_id = s.student_id
